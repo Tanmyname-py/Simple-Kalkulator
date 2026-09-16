@@ -2,7 +2,6 @@ const buttons = document.querySelector('.buttons');
 const display = document.querySelector('.display');
 const equal = document.querySelector('.equal');
 const error = document.querySelector('.error');
-const hasil = document.querySelector('.hasil');
 const clear = document.querySelector('.clear');
 const btnDel = document.querySelector('.backspace');
 const displayWraper = document.querySelector('.display-wraper');
@@ -156,7 +155,6 @@ clear.addEventListener('click', () => {
     if (angka === '') {
         display.textContent = '0';
         operasi.length = 0;
-        // hasil.textContent = ''
     }
 });
 
@@ -222,7 +220,6 @@ equal.addEventListener('click', () => {
 
     hitung();
     // menampilkan hasil dari operasi
-    // console.log(typeof operasi[0]
     display.textContent = operasi[0]
     // reset angka menjadi hasil operasi
     angka = operasi[0]
