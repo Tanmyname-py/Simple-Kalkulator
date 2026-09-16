@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    color: white;
+    height: 100dvh;
+    font-family: 'Space Mono', monospace, sans-serif;
+    background-color: #2d2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background: #1c1c1c;
+    width: 300px;
+    position: relative;
+    min-height: 400px;
+    border: 4px solid #6b6b6b;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.error {
+    margin: 10px;
+    font-size: .9rem;
+    color: red;
+    /* border: solid; */
+    position: fixed;
+    /* display: none; */
+}
+
+.hasil {
+    letter-spacing: 2px;
+    position: absolute;
+    right: 12px;
+    top: 25px;
+    font-size: 0.9rem;
+    color: #f0f8ff3e;
+
+}
+.display-wraper {
+    display: flex;
+    /* overflow: scroll; */
+    white-space: nowrap;
+    overflow-x: hidden;
+    align-items: end;
+    justify-content: end;
+    font-size: 1.5rem;
+    text-align: end;
+    height: 70px;
+    margin: 10px 10px 5px;
+}
+
+.buttons {
+    margin: 0 10px 5px;
+    gap: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    /* border: solid; */
+    flex: 1;
+}
+
+.buttons button {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    background: #494a4a3d;
+    box-shadow: 0 0 1px rgba(255, 255, 255, .6);
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+.buttons button:nth-child(1),.buttons button:nth-child(2),.buttons button:nth-child(3)  {
+    background: #494a4a;
+}
+
+.buttons button:nth-child(4),.buttons button:nth-child(8),.buttons button:nth-child(12),.buttons button:nth-child(16), .buttons button:nth-child(20) {
+    background: #f5bd16;
+}
