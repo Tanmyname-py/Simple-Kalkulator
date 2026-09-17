@@ -7,7 +7,6 @@ const btnDel = document.querySelector('.backspace');
 const displayWraper = document.querySelector('.display-wraper');
 let angka = '';
 let operasi = [];
-let limitInt = false;
 //Loop anak dari buttons
 Array.from(buttons.children).forEach(btn => {
     //Menambahkan listener ke semua anak dari buttons
@@ -174,13 +173,6 @@ equal.addEventListener('click', () => {
             }
         });
 
-        if (limitInt) {
-            error.textContent = 'Limit int!';
-            operasi.length = 0;
-            operasi[0] = '0'
-            limitInt = false
-            return;
-        }
         //loop dan mengerjakan operasi prioritas
         for (let i = 0; i < operasi.length; i++) {
             if (operasi[i] === '*') {
@@ -219,6 +211,12 @@ equal.addEventListener('click', () => {
     }
 
     hitung();
+
+    // cek save interger
+    if(operasi[0] > Number.MAX_SAFE_INTEGER) {
+        error.textContent = 'Limit int!';
+        return;
+    }
     // menampilkan hasil dari operasi
     display.textContent = operasi[0]
     // reset angka menjadi hasil operasi
